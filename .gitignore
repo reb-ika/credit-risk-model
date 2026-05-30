@@ -1,0 +1,13 @@
+
+venv/
+data/
+*.csv
+*.zip
+*.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.env
+mlruns/
+mlflow.db
+*.pkl
+*.joblib
