@@ -7,7 +7,7 @@ import numpy as np
 from src.data_processing import load_raw_data, RFMFeatureEngineer, ProxyTargetCreator
 
 def test_load_raw_data():
-    """Test that raw data loads correctly"""
+    """Test that raw data loads correctly - skip if file not found"""
     try:
         df = load_raw_data('data/raw/training.csv')
         assert df is not None
@@ -17,7 +17,7 @@ def test_load_raw_data():
         assert len(df) > 0
         print("✅ test_load_raw_data passed")
     except FileNotFoundError:
-        pytest.skip("Raw data file not found - skipping test")
+        pytest.skip("Raw data file not found in CI - skipping test")
 
 def test_rfm_feature_engineer():
     """Test RFM feature engineering creates expected columns"""
